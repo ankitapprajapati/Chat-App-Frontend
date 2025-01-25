@@ -14,7 +14,7 @@ import { messageAtom } from './messageAtom'
   
     useEffect( ()=>{
       try{
-        const wss = new WebSocket("ws://localhost:80");
+        const wss = new WebSocket("https://chat-app-server-g0pd.onrender.com");
         
         wss.onopen = ()=>{
           console.log("connected to server")
