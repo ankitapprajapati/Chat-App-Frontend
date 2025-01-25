@@ -97,6 +97,7 @@ const CreateRoom = () => {
             type="text"
             id="inputJoin"
             value={RoomId}
+            placeholder='Enter room code'
             onChange={(e) => {
               setRoomId(e.target.value)
             }}
