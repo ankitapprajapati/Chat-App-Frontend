@@ -4,13 +4,13 @@ import { Route, Routes } from 'react-router-dom'
 import ChatRoom from './components/ChatRoom'
 import CreateRoom from './components/CreateRoom'
 import { useEffect } from 'react'
-import {  useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { wssAtom } from './wssAtom'
 import { messageAtom } from './messageAtom'
 
   function App() {
-    const [ws, setWs] = useRecoilState(wssAtom);
-    const [messages,setMessages] = useRecoilState(messageAtom);
+    const setWs = useSetRecoilState(wssAtom)
+    const setMessages = useSetRecoilState(messageAtom)
   
     useEffect( ()=>{
       try{

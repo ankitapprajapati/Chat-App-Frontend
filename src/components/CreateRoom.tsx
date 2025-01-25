@@ -38,13 +38,14 @@ const CreateRoom = () => {
     if (RoomId.trim() === "") return;
 
     try {
-      await wss.send(JSON.stringify({
-        "type": "join",
-        "payload": {
-          "roomId": `${RoomId}`
-        }
-      }))
-      navigate(`/room/${RoomId}`)
+      if(wss){  wss.send(JSON.stringify({
+          "type": "join",
+          "payload": {
+            "roomId": `${RoomId}`
+          }
+        }))
+        navigate(`/room/${RoomId}`)
+      }
     } catch (e) {
       console.log("Unable to join the room : " + e)
     }
